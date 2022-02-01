@@ -2,9 +2,9 @@ package  edu.escuelaing.arep;
 
 import static spark.Spark.*;
 
-import edu.escuelaing.Categorias.temperatura.Celsius;
-import edu.escuelaing.Categorias.temperatura.Temperatura;
+import com.google.gson.Gson;
 
+import edu.escuelaing.Categorias.temperatura.*;
 
 
 public class SparkWebApp {
@@ -13,25 +13,23 @@ public class SparkWebApp {
         port(getPort());
         get("/hello", (req, res) -> "Hello Heroku");
         path("/Temperatura",()->{
-            final Temperatura tempe = new Celsius();
-            path("/Celsius",()->{
-                get("/Fahrenhaeit/:value", (req, res) -> {
-                    return " "+tempe.getFahrenheit(Integer.valueOf(req.params(":value")));
-                });
-                get("/Celsius/:value", (req, res) -> {
-                    return "Hello Heroku " + req.params(":value");
-                });
+            get("/Celsius/:value", (req, res)->{
+                return getCelsius(Double.valueOf(req.params(":value")));
             });
-            path("/Fahrenhaeit",()->{
-                get("/Fahrenhaeit/:value", (req, res) -> {
-                    return "Hello Heroku " + req.params(":value");
-                });
-                get("/Celsius/:value", (req, res) -> {
-                    return "Hello Heroku " + req.params(":value");
-                });
+            get("/Fahrenheit/:value", (req, res)->{
+                return getFahrenheit(Double.valueOf(req.params(":value")));
             });
         });       
     }
+
+    private static Object getCelsius(double valor) {
+        return new Gson().toJson(new Celsius(valor));
+    }
+
+    private static Object getFahrenheit(double valor) {
+        return new Gson().toJson(new Fahrenheit(valor));
+    }
+
     static int getPort() {
         if (System.getenv("PORT") != null) {
             return Integer.parseInt(System.getenv("PORT"));
@@ -39,4 +37,6 @@ public class SparkWebApp {
         return 4567;
         //returns default port if heroku-port isn't set (i.e. on localhost)
     }
+
+
 }

@@ -19,7 +19,7 @@ public class AppTest {
      * Se verifica que la resolucion de Celsius a Fahrenheit sea correcta, y todas deben pasar
      */
     public void CaseCelsiusFahrenheit(){
-        tem = new Celsius();
+        tem = new Celsius(0);
         assertEquals(tem.getFahrenheit(0.0),32.0,1);
         assertEquals(tem.getFahrenheit(31),87.8,1);
         assertEquals(tem.getFahrenheit(55),131,1);
@@ -35,7 +35,7 @@ public class AppTest {
      * Se verifica que la resolucion de Celsius a Celsius sea correcta, y todas deben pasar
      */
     public void CaseCelsiusCelsius(){
-        tem = new Celsius();
+        tem = new Celsius(0);
         assertEquals(tem.getCelsius(0.0),0.0,1);
         assertEquals(tem.getCelsius(31),31,1);
         assertEquals(tem.getCelsius(55),55,1);
@@ -53,7 +53,7 @@ public class AppTest {
      */
     public void CaseFahrenheitCelsius(){
         
-        tem = new Fahrenheit();
+        tem = new Fahrenheit(0);
         assertEquals(0.0,tem.getCelsius(32.0),1);
         assertEquals(31,tem.getCelsius(87.8),1);
         assertEquals(55,tem.getCelsius(131),1);
@@ -70,7 +70,7 @@ public class AppTest {
      */
     public void CaseFahrenheitFahrenheit(){
         
-        tem = new Fahrenheit();
+        tem = new Fahrenheit(0);
         assertEquals(tem.getFahrenheit(0.0),0.0,1);
         assertEquals(tem.getFahrenheit(31),31,1);
         assertEquals(tem.getFahrenheit(55),55,1);
