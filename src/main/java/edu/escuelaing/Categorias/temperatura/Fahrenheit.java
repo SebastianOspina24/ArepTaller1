@@ -3,7 +3,7 @@ package edu.escuelaing.Categorias.temperatura;
 public class Fahrenheit implements Temperatura{
 
     private double celsius;
-    private double fahrenhaeit;
+    private double fahrenheit;
 
     public Fahrenheit(double value){
         celsius = getCelsius(value);
