@@ -5,7 +5,7 @@ package edu.escuelaing.Categorias.temperatura;
 public class Celsius implements Temperatura{
 
     private double celsius;
-    private double fahrenhaeit;
+    private double fahrenheit;
 
     /**
      * Constructor de Celsius y calcula todas las temperaturas que esten en la interfaz implementada
