@@ -7,7 +7,7 @@ public class Fahrenheit implements Temperatura{
 
     public Fahrenheit(double value){
         celsius = getCelsius(value);
-        fahrenhaeit = getFahrenheit(value);
+        fahrenheit = getFahrenheit(value);
     }
 
     @Override
