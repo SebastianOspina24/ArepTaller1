@@ -30,11 +30,12 @@
   }
   
   .code{
-    padding:3%;
+    font-family:monospace;
+    padding: 3%;
     background:white;
     color:blue;
-    width:80%;
     border-radius:10px;
+    border:0!important
   }
   p{
     color: white;
@@ -85,12 +86,28 @@
     border-bottom: 0.2rem solid white;
   }
   
-  #profile-link{
+  .apiResponse{
     align-items: center;
     background-color:#303841;
     padding:10% 25%;
   }
+  .box{
+    height:5% ;
+    width: 30%;
+  }
   
+  .conection-section{
+    align-items: center;
+    background-color:#45567d;
+    padding:10% 25%;
+  }
+
+  .test-section{
+    align-items: center;
+    background-color:#303841;
+    padding:10% 25%;
+  }
+
   #image{
     
     width:10%;

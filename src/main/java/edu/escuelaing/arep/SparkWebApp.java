@@ -2,11 +2,9 @@ package  edu.escuelaing.arep;
 
 import static spark.Spark.*;
 import spark.Filter;
-import spark.Request;
-import spark.Response;
+
 
 import com.google.gson.Gson;
-import com.google.gson.JsonElement;
 
 import edu.escuelaing.Categorias.temperatura.*;
 
