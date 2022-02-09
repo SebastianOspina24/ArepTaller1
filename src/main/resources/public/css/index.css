@@ -30,11 +30,12 @@
   }
   
   .code{
-    padding:3%;
+    font-family:monospace;
+    padding: 3%;
     background:white;
     color:blue;
-    width:80%;
     border-radius:10px;
+    border:0!important
   }
   p{
     color: white;
@@ -66,6 +67,7 @@
   }
 
   body{
+    justify-content: center;
     width: 100%;
     font-size: 200%;
   }
@@ -85,12 +87,40 @@
     border-bottom: 0.2rem solid white;
   }
   
-  #profile-link{
+  .apiResponse{
+    justify-content: center;
     align-items: center;
     background-color:#303841;
     padding:10% 25%;
   }
+  .box{
+    height:auto;
+    width: auto;
+    font-size:100%;
+  }
+
   
+  .conection-section{
+
+    align-items: center;
+    background-color:#45567d;
+    padding:10% 25%;
+  }
+  .testing{
+    font-size:100%;
+    margin:3%;
+    color: white;
+  }
+
+  .test-section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color:#303841;
+    padding:10% 25%;
+  }
+
   #image{
     
     width:10%;

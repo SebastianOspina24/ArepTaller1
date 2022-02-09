@@ -2,8 +2,9 @@ package  edu.escuelaing.arep;
 
 import static spark.Spark.*;
 import spark.Filter;
+
+
 import com.google.gson.Gson;
-import com.google.gson.JsonElement;
 
 import edu.escuelaing.Categorias.temperatura.*;
 
@@ -18,16 +19,16 @@ public class SparkWebApp {
             response.header("Access-Control-Allow-Origin", "*");
             response.header("Access-Control-Allow-Methods", "GET");
         });
-        path("/Temperatura",()->{
-            get("/Celsius",  "application/json",(req, res)->{
+        path("/Temperatura",() ->{
+            get("/Celsius",(req, res)->{
                 res.type("application/json");
                 return getCelsius(Double.valueOf(req.queryParams("value")));
             });
-            get("/Fahrenheit",  "application/json",(req, res)->{
+            get("/Fahrenheit",(req, res)->{
                 res.type("application/json");
                 return getFahrenheit(Double.valueOf(req.queryParams("value")));
-            });
-        });  
+            });  
+        });
     }
 
     private static String getCelsius(double valor) {

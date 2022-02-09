@@ -1,61 +1,150 @@
 <html>
-    <script src="js/apiconection.js"></script>
-    <link rel="stylesheet" type="text/css" href="css/index.css"/>
-  <nav id="navbar">
-    <ul class="nav-lis">
-      <li>
-        <a class="nav-a" href="#welcome-section"> About</a>
-      </li>
-      <li>
-        <a class="nav-a"  href="#Api-info">Api info</a>
-      </li>
-      <li>
-        <a class="nav-a"  href="#profile-link">Contact</a>
-      </li>
-    </ul>
-  </nav>  
-  <body>
+<script src="js/apiconection.js"></script>
+<link rel="stylesheet" type="text/css" href="css/index.css" />
+<nav id="navbar">
+  <ul class="nav-lis">
+    <li>
+      <a class="nav-a" href="#welcome-section"> About</a>
+    </li>
+    <li>
+      <a class="nav-a" href="#Api-info">ApiInfo</a>
+    </li>
+    <li>
+      <a class="nav-a" href="#apiResponse">APIResponse</a>
+    </li>
+    <li>
+      <a class="nav-a" href="#Conections">Conexiones</a>
+    </li>
+    <li>
+      <a class="nav-a" href="#Test">Testing</a>
+    </li>
+  </ul>
+</nav>
+
+<body>
 
   <section id="welcome" class="welcome-section">
     <h1>Bienvenido a esta la pagina de CambiandoAndo API</h1>
-    <p>CambiandoAndo es una api enfocada a la conversion de unidades la cual esta desarollada en Java con un nivel de extencion muy alto permitiendo estar en constaten desarrollo.</p>
-    
-<div>
-    <img
-        class="project-image"
-        src="img/welcome.png"
-        alt="Cambio"
-      />
-   </div>
- 
-    </section>
-  
-  
+    <p>CambiandoAndo es una api enfocada a la conversion de unidades la cual esta desarollada en Java con un nivel de
+      extencion muy alto permitiendo estar en constaten desarrollo.</p>
+
+    <div>
+      <img class="project-image" src="img/welcome.png" alt="Cambio" />
+    </div>
+
+  </section>
+
+
   <section id="Api-info" class="projects-section">
     <h2 class="section-header">API Key</h2>
     <div>
-      <p>Nuestra API va a tener el siguiente link de conexion y mediante el uso de rutas vamos a poder acceder a las diferentes converciones</p>
+      <p>Nuestra API va a tener el siguiente link de conexion y mediante el uso de rutas vamos a poder acceder a las
+        diferentes converciones</p>
       <h3>Base URL</h3>
       <div class="code">
         https://areptaller1.herokuapp.com/
       </div>
       <h3>
-        Agregardirecion de convercion deseada</h3><p> Como parametro value el que se desea convertir.
+        Agregardirecion de convercion deseada
+      </h3>
+      <p>
+        Como parametro value el que se desea convertir.
       </p>
       <div class="code">
         https://areptaller1.herokuapp.com/Temperatura/Fahrenheit?value=ValorEnFahrenheitAConvertir
       </div>
-      
+
     </div>
   </section>
-  <section id="profile-link">
+  <section id="apiResponse" class="apiResponse">
     <div class="section-header">
-    <h2>Know more about me</h2>
-      <h2 id="consultaFar"></h2>
+      <h2>API Response</h2>
+    </div>
+    <p>CambiandoAnado,va a dar respueta a sus perticiones en el estandar JSON format para la facil comprension por los
+      lenguajes de programacion</p>
+    <p>
+      Como se puede ver en la consulta de convertir 32 grados Celsius
+    </p>
+    <div class="code">
+      {<br/>
+      "celsius":32.0,"fahrenheit":89.6<br/>
+      }
+    </div>
+
+  </section>
+
+  <section id="Conections" class="conection-section">
+    <div class="section-header">
+      <h2>API Conection</h2>
+    </div>
+  <div>
+    <div class="section-header">
+      <h3>Conexion desde js</h3>
+    </div>
+    <p>Para lograr conectarse desde JavaScript se haciendo uso de fetch se hace de la siguiente forma, y como sabemos esto devuelve es un JSON</p>
+    <div class="code">
+      let url = "https://areptaller1.herokuapp.com/Temperatura/Fahrenheit?value=66"
+      <br/>
+      function consumirapi(){<br/>
+        fetch(url)<br/>
+        .then(res=>console.log(res))<br/>
+      }
+    </div>
+  </div>
+  <div>
+    <div class="section-header">
+      <h3>Conexion desde Java</h3>
+    </div>
+    <p>Para lograr conectarse desde Java existen muchos metodos de conexion vamos a ver una forma sencilla que es usando la libreria de java.net</p>
+    <div >
+      <img style="border-radius:25px ;" class="project-image" src="img/conexionjava.jpg" alt="Conection api using java" />
+    </div>
+  </div>
+  <div>
+    <div class="section-header">
+      <h3>Conexion desde Browser</h3>
+    </div>
+    <p>Para lograr conectarse desde un Browser es tan sencillo como usar la direccion del api y como esta en la parte de arriba y esta devuelve este resultado </p>
+    <img style="border-radius:25px ;" class="project-image" src="img/BrowserPhoto.jpg" alt="Conection api using java" />
   </div>
 
   </section>
-  <button class="btn" onclick="consumirapi()">Obtener</button>
 
+  <section id="Test" class="test-section">
+
+    <div class="section-header">
+      <h2>Testing</h2>
+    </div>
+  <div class="testing">
+    <center>
+    <label>Selecciona la unidad a convertir:</label>
+    <div class="testing">
+    <select class="box" id="tempe">
+      <option value="Fahrenheit">Fahrenheit</option>
+      <option value="Celsius">Celsius</option>
+    </div>
+    </select>
+  </center>
+  </div>
+<div class="testing">
+    <input class="box" type="number" id="value" placeholder="Valor a convertir ">
+  </div>
+<div class="testing">
+    <button  class="box" onclick="consumirapi()" class="btn">Consultar</button>
+  </div>
+  <center>
+  <div class="testing">
+    <h3>Celsius:</h3>
+    <p id="celsius"></p>
+  </div>
+</center>
+<center>
+  <div class="testing">
+    <h3>Fahrenheit:</h3>
+    <p id="fahrenheit"></p>
+  </div>
+</center>
+  </section>
 </body>
+
 </html>
