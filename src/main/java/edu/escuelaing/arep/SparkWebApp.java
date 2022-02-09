@@ -11,7 +11,7 @@ public class SparkWebApp {
 
     public static void main(String[] args) {
         port(getPort());
-        staticFiles.location("/html");
+        staticFileLocation("/html");
         path("/Temperatura",()->{
             get("/Celsius", (req, res)->{
                 return getCelsius(Double.valueOf(req.queryParams("value")));
