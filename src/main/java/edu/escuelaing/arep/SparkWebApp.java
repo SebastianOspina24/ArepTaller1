@@ -19,12 +19,14 @@ public class SparkWebApp {
             response.header("Access-Control-Allow-Origin", "*");
             response.header("Access-Control-Allow-Methods", "GET");
         });
+        path("/Temperatura",() ->{
             get("/Celsius",  "application/json",(req, res)->{
                 return getCelsius(Double.valueOf(req.queryParams("value")));
             });
             get("/Fahrenheit",  "application/json",(req, res)->{
                 return getFahrenheit(Double.valueOf(req.queryParams("value")));
             });  
+        });
     }
 
     private static String getCelsius(double valor) {
