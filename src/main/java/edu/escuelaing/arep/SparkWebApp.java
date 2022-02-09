@@ -11,15 +11,15 @@ public class SparkWebApp {
 
     public static void main(String[] args) {
         port(getPort());
-        get("/hello", (req, res) -> "Hello Heroku");
+        staticFiles.location("/html");
         path("/Temperatura",()->{
-            get("/Celsius/:value", (req, res)->{
-                return getCelsius(Double.valueOf(req.params(":value")));
+            get("/Celsius", (req, res)->{
+                return getCelsius(Double.valueOf(req.queryParams("value")));
             });
-            get("/Fahrenheit/:value", (req, res)->{
-                return getFahrenheit(Double.valueOf(req.params(":value")));
+            get("/Fahrenheit", (req, res)->{
+                return getFahrenheit(Double.valueOf(req.queryParams("value")));
             });
-        });       
+        });  
     }
 
     private static Object getCelsius(double valor) {

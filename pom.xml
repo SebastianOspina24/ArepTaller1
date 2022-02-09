@@ -28,6 +28,13 @@
     <version>4.13.2</version>
     <scope>test</scope>
     </dependency>
+    <!-- https://mvnrepository.com/artifact/org.webjars.bower/jquery -->
+    <dependency>
+        <groupId>org.webjars.bower</groupId>
+        <artifactId>jquery</artifactId>
+        <version>3.6.0</version>
+    </dependency>
+
     <!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-api -->
     <dependency>
       <groupId>org.slf4j</groupId>
